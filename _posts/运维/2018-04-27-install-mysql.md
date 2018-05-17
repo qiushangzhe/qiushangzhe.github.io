@@ -2,6 +2,7 @@
 layout: post
 title: 在linux下安装mysql
 date: 2018-04-27 00:00:00
+key: 2018-04-27
 category: op
 tags: [op,mysql]
 ---
