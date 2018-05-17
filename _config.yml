@@ -1,39 +1,167 @@
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely need to edit after that.
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'jekyll serve'. If you change this file, please restart the server process.
+#
+# ,--------.      ,--.   ,--. ,--.
+# '--.  .--',---.  \  `.'  /,-'  '-.
+#    |  |  | .-. :  .'    \ '-.  .-'
+#    |  |  \   --. /  .'.  \  |  |
+#    `--'   `----''--'   '--' `--'
+
+
+
+
+## => Site Settings
+##############################
+text_color_theme: default # "default" (default), "dark", "forest", "ocean", "chocolate", "orange"
+url: https://qiushangzhe.github.io # the base hostname & protocol for your site e.g. https://www.someone.com
+baseurl: / # does not include hostname
+title: qiusz's blog
+description: > # this means to ignore newlines until "Language & timezone"
+  qiusz's Blog
+
+
+## => Language and Timezone
+##############################
+lang: zh # the language of your site, "en" (default, English), "zh"(简体中文), "zh-Hans"(简体中文), "zh-Hant"(繁體中文)
+timezone: # see https://en.wikipedia.org/wiki/List_of_tz_database_time_zones for the available values
+
+
+## => Author and Social
+##############################
+author:
+  name: Qiusz
+  email: 470542573@qq.com # your Email address e.g. someone@site.com
+  facebook: # your Facebook username
+  twitter: # your Twitter username
+  github: qiushangzhe.github.io # your GitHub username
+  linkedin: # your Linkedin username
+  googleplus: # your Google+ username
+  weibo: # your Weibo username
+  douban: # your Douban username
+
+
+## => GitHub Repository (if the site is hosted by GitHub)
+##############################
+repository: qiushangzhe/qiushangzhe.github.io
+repository_tree: master
+
+
+## => Navigation
+##############################
+paths:
+  base: /
+  home: /
+  all:  /all.html
+  rss:  /feed.xml
+
+nav_lists:
+  - titles:
+      en: About
+      zh: 关于
+      zh-Hans: 关于
+      zh-Hant: 關於
+    url: /about.html
+
+
+## => Post
+##############################
+## excerpt
+excerpt_separator: <!-- more -->
+excerpt_type: html # text (default), html
+
+## TOC
+toc:
+  selectors: # "h1,h2,h3" (default)
+
+## Markdown Enhancements
+
+# Mathjax
+mathjax: # false (default), true
+mathjax_autoNumber: # false (default), true
+
+# Mermaid
+mermaid: # false (default), true
+
+# Chart
+chart: # false (default), true
+
+
+## => Paginate
+##############################
+paginate: 8
+paginate_path: /blog/page:num # don't change this unless for special need
+
+
+## => Sources
+##############################
+sources: # bootcdn (default), unpkg
+
+
+## => Comments
+##############################
+## Disqus
+disqus:
+  shortname: # the Disqus shortname for the site
+
+## Gitalk
+# please refer to https://github.com/gitalk/gitalk for more info.
+gitalk:
+  clientID: 51fe52d2feadeec76252 # GitHub Application Client ID
+  clientSecret: c920215cf9fefff6d9ea780adbef57b6ccb258d3 # GitHub Application Client Secret
+  repository: MessageBoard # GitHub repo
+  owner: qiushangzhe # GitHub repo owner
+  admin: qiushangzhe # GitHub repo owner and collaborators, only these guys can initialize GitHub issues, IT IS A LIST.
+    # - your GitHub Id
+
+
+## => Pageview
+##############################
+## Leancloud
+leancloud:
+  app_id: ChYi5T87pgNqjzoJmODQ832k-gzGzoHsz # LeanCloud App id
+  app_key: haUc6ng2M0NUQxXPMneILh6i # LeanCloud App key
+  app_class: _User # LeanCloud App class
+
+
+## => Analytics
+##############################
+## Google Analytics
+ga_tracking_id: # Google Analytics id for the site
+
+
+## => Build
+##############################
 markdown: kramdown
 highlighter: rouge
-permalink: /:categories/:title.html 
-excerpt_separator: "<!-- more -->"
+permalink: date
 
-github: qiushangzhe
-author: "qiushangzhe"
-email: 470542573@qq.com
-name: "qiusz's Blog"
-baseurl: /
-url: https://qiushangzhe.github.io
-domain: qiushangzhe.github.io
+exclude:
+  - CHANGELOG.md
+  - CHECKLIST.md
+  - Gemfile
+  - Gemfile.lock
+  - LICENSE
+  - README-*.md
+  - README.md
+  - gulpfile.js
+  - jekyll-text-theme.gemspec
+  - package-lock.json
+  - package.json
+  - /docs
+  - /node_modules
+  - /screenshots
+  - /test
+  - /vendor
 
-all_categories: [
-  ["idea", "点子","/idea/index.html"], 
-  ["pi", "树莓派", "/pi/index.html"],
-  ["code", "写代码","/code/index.html"], 
-  ["talk", "杂谈","/talk/index.html"],
-  ["op", "运维","/op/index.html"]
-]
 
-paginate: 10 
-paginate_path: "index_:num"
-
-index_layout: "index.html"
-category_layout: "_layouts/category.html"
-tag_layout: "_layouts/tag.html"
-
-#不使用gems库中的jekyll-paginate-category
-#使用基于jekyll-paginate改写的的栏目分页插件，所以jekyll-paginate还需要用上。
-#gems: [jekyll-paginate,jekyll-paginate-category]
-plugins: [jekyll-paginate]
-
-collections:
-  docs:
-    output: true
-
-copyright: []
-#timezone: Asia/Beijing
+## => Plugins
+##############################
+plugins:
+  - jekyll-feed
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jemoji

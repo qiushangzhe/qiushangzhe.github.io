@@ -1,17 +1,9 @@
-  <div id="git_comment" style="margin:0px 10px"></div>
-  <script src="/comment/gitment.browser.js"></script>
-  <script>
-    var clientId = '51fe52d2feadeec76252'
-    var clientSecret = 'c920215cf9fefff6d9ea780adbef57b6ccb258d3'
-    var gitment = new Gitment({
-      id: window.location.pathname,
-      owner: 'qiushangzhe',
-      repo: 'MessageBoard',
-      oauth: {
-        client_id: clientId,
-        client_secret: clientSecret,
-      },
-    })
+{%- if jekyll.environment != "development" -%}
 
-    gitment.render('git_comment')
-  </script>
+  {%- if site.disqus.shortname -%}
+    {%- include comment-providers/disqus.html -%}
+  {%- elsif site.gitalk.clientID and site.gitalk.clientSecret and site.gitalk.repository and site.gitalk.owner and site.gitalk.admin -%}
+    {%- include comment-providers/gitalk.html -%}
+  {%- endif -%}
+
+{%- endif -%}
