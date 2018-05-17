@@ -1,12 +1,16 @@
 ---
-layout: default
+layout: post
 title: 如何编写并发布一个npm包
-tags: tech
+date: 2017-08-03 00:00:00
+category: code
+tags: [npm]
 ---
 
 ## 干啥的
 
 做js开发的 人应该对 npm install xxxx 这个指令并不陌生。当做一个需求的时候，有些功能有人已经写好了，你只需要执行这个命令去安装它的包就可以了。非常方便。那么如何来写一个我们自己的npm包呢？
+
+<!-- more -->
 
 ## 简单说一些
 

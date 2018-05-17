@@ -1,7 +1,9 @@
 ---
-layout: default
+layout: post
 title: 在linux下安装mysql
-tags: op
+date: 2018-04-27 00:00:00
+category: op
+tags: [op,mysql]
 ---
 
 ## 安装
@@ -15,6 +17,8 @@ tags: op
 	- sudo rpm -e --nodeps 包名
 
 #### 1. 第一步下载（去官网选好自己的版本）
+
+<!-- more -->
 
 - wget -c https://cdn.mysql.com//Downloads/MySQL-5.7/mysql-community-common-5.7.21-1.el7.x86_64.rpm
 

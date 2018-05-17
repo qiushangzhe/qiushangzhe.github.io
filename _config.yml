@@ -15,7 +15,7 @@ all_categories: [
   ["idea", "点子","/idea/index.html"], 
   ["pi", "树莓派", "/pi/index.html"],
   ["code", "写代码","/code/index.html"], 
-  ["talk", "杂谈","/linux/index.html"],
+  ["talk", "杂谈","/talk/index.html"],
   ["op", "运维","/op/index.html"]
 ]
 
@@ -29,11 +29,11 @@ tag_layout: "_layouts/tag.html"
 #不使用gems库中的jekyll-paginate-category
 #使用基于jekyll-paginate改写的的栏目分页插件，所以jekyll-paginate还需要用上。
 #gems: [jekyll-paginate,jekyll-paginate-category]
-gems: [jekyll-paginate]
+plugins: [jekyll-paginate]
 
 collections:
   docs:
     output: true
 
 copyright: []
-#timezone: Asia/Shanghai
+timezone: Asia/Beijing
