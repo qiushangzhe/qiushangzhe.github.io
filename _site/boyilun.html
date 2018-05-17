@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="description" content="博弈论简谈 - qiusz's Blog - 作者:qiushangzhe"/> 
+	<meta name="keywords" content="talk"/>
+    <title>博弈论简谈 - qiusz's Blog</title>
+    <!-- Bootstrap Core CSS -->
+    <link href="/css/bootstrap.min.css" rel="stylesheet"/>
+    <!-- Custom CSS -->
+    <link href="/css/blog.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="/comment/default.css">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media
+    queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file://
+    -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js">
+      </script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js">
+      </script>
+    <![endif]-->
+        <!-- jQuery Version 1.11.0 -->
+    <script src="/js/jquery-1.11.0.js"> </script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/tongji.js"></script>
+  </head>
+  
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only">
+              Toggle navigation
+            </span>
+            <span class="icon-bar">
+            </span>
+            <span class="icon-bar">
+            </span>
+            <span class="icon-bar">
+            </span>
+          </button>
+          <a class="navbar-brand" href="/">
+            首页
+          </a>
+        </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          		<ul class="nav navbar-nav">
+			
+				<li>
+				  <a href="/idea/index.html">
+					点子
+				  </a>
+				</li>
+			
+				<li>
+				  <a href="/pi/index.html">
+					树莓派
+				  </a>
+				</li>
+			
+				<li>
+				  <a href="/code/index.html">
+					写代码
+				  </a>
+				</li>
+			
+				<li>
+				  <a href="/linux/index.html">
+					杂谈
+				  </a>
+				</li>
+			
+				<li>
+				  <a href="/op/index.html">
+					运维
+				  </a>
+				</li>
+			
+		</ul>  
+        </div>
+        <!-- /.navbar-collapse -->
+      </div>
+      <!-- /.container -->
+    </nav>
+    <!-- Page Content -->
+    <div class="container">
+      <div class="row">
+        <!-- Blog Entries Column -->
+        <div class="col-md-8">
+          <h3 id="topic-01-我们生活在困境中">topic 01 我们生活在困境中</h3>
+<p>给大家讲几个我身边的事情：</p>
+
+<ul>
+  <li>
+    <p>我身边会有很多孩子的家长，给孩子报兴趣班，学钢琴，毛笔字，各种巴拉巴拉。这是条件好一点的，条件差一点的，也会报各种的课外辅导班。</p>
+  </li>
+  <li>
+    <p>我就拿一个我自己身边的例子来说，我小的时候，基本周六周日都会去上补课班，而且不是一个人两个人这样，几乎我们一个班级60人，每天放学，每周放假都会有大约40人参加这个补课班。</p>
+  </li>
+  <li>
+    <p>我在高三快考大学的时候，很多商家会来我们学校推销补脑的东西，很多家长也都不太懂是什么东西，就看到别人也买了，自己也跟着买了，虽然最后这个保健药品，跟吃3块钱一包的蛋白粉差不多。</p>
+  </li>
+  <li>
+    <p>运动员服用兴奋剂这个事情其实已经成为业内一个潜规则，几乎百分之90的运动员，在大型比赛中都会或多或少的使用一些兴奋剂来提高比赛成绩，只不过一些国家医学水平比较发达，可以开发出隐蔽性高的药物，或是国家在赛组委会里面有内鬼，里应外合，让服用兴奋剂不会轻易被发现。中国也不例外（百度：李承鹏兴奋剂）</p>
+  </li>
+  <li>
+    <p>还有开车的人特别痛恨的开远光。我想这个事情除非出台重罚法律，否则这个事情会一直存在。</p>
+  </li>
+  <li>
+    <p>财礼，男方家，想少给，女方家想多要。结果多年的感情就在马上结婚之前因为彩礼的事情谈崩了。</p>
+  </li>
+</ul>
+
+<p>我想大家现在应该也会隐约的在我说的这些事情上发现一些共同点。可能每个人对这些身边发生的事情都有自己的见解，我只说一下这里面我要说的点。这些事情基本都可以概括为，跟风。或者说是大家都这么做，我不这么做就吃亏了。或者说个人的利益最大化。人类其实的本能就是在对得与失作出充分计算后行动的动物。</p>
+
+<p>那么我就着这几个小事情再给大家提供另一个思路（以下为极端情况）：</p>
+
+<ul>
+  <li>
+    <p>如果当代社会中的所有家长，都不给孩子报比如钢琴班，那么所有的孩子都不会弹钢琴，那么和所有的孩子都会弹钢琴，实际上是差不多的。因为最后竞争的时候，所有人都不会弹钢琴，和所有人都会弹实际是等价的。况且上钢琴班还要花钱。</p>
+  </li>
+  <li>
+    <p>所有人都不去上课外培训班，大家都只在学校学习，其他时间都好好的度过课余时间。实际上和所有人在学校学习，放学了／放假了去课外辅导班，是一样的。而且如果每个人都不去课外辅导班，那么所有人可能只有60分的学力，那么老师出题可能还会简单，否则每个人都有100分的学力，不仅会让考试题更难，而且还牺牲了课余时间，还费钱。</p>
+  </li>
+  <li>
+    <p>保健品的事情，如果每个人都不买，那么每个人都会获益对吧？先不说吃了以后有没有效果，如果每个人都不买，那么每个人也不会被骗钱。但现实就是，很多人宁可高价跟风去买这个东西，也要试试，毕竟别人也吃了。如果有效果的话，我没有吃岂不是吃亏了。😄</p>
+  </li>
+  <li>
+    <p>兴奋剂！如果所有的运动员或者国家都对兴奋剂说不，那么也免去了开发成本，隐藏成本，还有服用后的副作用。百利无一害的东西。</p>
+  </li>
+  <li>
+    <p>远光灯。所有人都遵守规则，在该开远光的时候开，不该开的时候都不开。即不让别人苦恼，而且自己也省电。（我其实也不知道省不省电哈）</p>
+  </li>
+  <li>
+    <p>彩礼，男方多给点，女方少要点。事情就很开心。（哈哈）</p>
+  </li>
+</ul>
+
+<p>刚刚也说了，人类其实的本能就是在对得与失作出充分计算后行动的动物。明明所有人都不这么做，这个事情获得的收益会更大，但是人们往往却不约而同的让事情往对大家都不好的方向发生。为啥捏？？？？</p>
+
+<p>我拿兴奋剂为例子，列一个表格：</p>
+
+<p>（我们假设吃药不会被轻易查出来）	B运动员选择吃兴奋剂	B运动员选择不吃兴奋剂
+A运动员选择吃兴奋剂	A发挥超常(获得并列冠军)，赛后出现后遗症，可能被抓到吃药的把柄，禁赛。
+B发挥超常(获得并列冠军)，赛后出现后遗症，赛后出现后遗症，可能被抓到吃药的把柄，禁赛。
+A发挥超常(获得冠军)，赛后出现后遗症，可能被抓到吃药的把柄，禁赛。
+B普通发挥
+A运动员选择不吃兴奋剂	A普通发挥
+B发挥超常(获得冠军)，赛后出现后遗症，可能被抓到吃药的把柄，禁赛。
+两人均正常发挥。</p>
+
+<p>那么如果我是A，不论B是否吃兴奋剂，那么我选择吃兴奋剂，都是对我自己最优的选择。</p>
+
+<p>我再举一个比较大的例子。</p>
+
+<p>朝鲜和美国之间的那些事情：
+现在朝鲜在搞核实验，准备怒怼美国。
+美国现在在疯狂的经济制裁朝鲜。</p>
+
+<p>其实两国之间，朝鲜不进行核试验，美国也不制裁朝鲜，大家相安无事是最优解。但是为什么会发生这种事情呢？
+这个问题分析同上一个问题如出一辙，请看表格。</p>
+
+<p>朝鲜研究核武器	朝鲜不研究核武器
+美国经济制裁朝鲜	美国担心朝鲜哪天给我一导弹。
+朝鲜经济受到了影响。人民吃不饱。	压制朝鲜的经济，让他不能动摇美国第一霸权国家的地位。
+美国不制裁朝鲜	朝鲜自己的军事实力得到大幅度的提升	朝鲜还是像得到全球各国的援助。
+美国不用在意朝鲜的核武器。
+哝。不论美朝双方怎么选，另一者都会选择对自己有利的哪一种决策。破这个局，看来只能让中国代替美国成为世界一把手了 哈哈。</p>
+
+<p>这些其实都是一种叫做囚徒困境的博弈论模型的典型实例，其主旨是反映个人最佳选择并非团体最佳选择。</p>
+
+<h3 id="topic-02-困境对我们的影响">topic 02 困境对我们的影响</h3>
+
+<p>再说一个：</p>
+
+<h4 id="沉默的公众">沉默的公众</h4>
+
+<p>小偷在公共场合偷东西，有人看到了却默不作声，没有被偷的人在想，反正没有偷我，我举报了他，我没有任何的收益，还可能被小偷报复。而不举报默不作声，虽然得不到什么，但也不受损。
+小偷也是一样的思路，如果谁反抗举报我，我就揍他，报复他，因为如果个别人举报我反抗，而我不揍他的话，就会有更多的人举报我，反抗我。导致我被抓住，因此小偷必定要打举报他偷东西的人。</p>
+
+<p>有人举报	没人举报
+小偷打举报他的人	举报者被揍，其他人害怕。	-
+小偷不打举报他的人	更多人过来抓小偷。	很完美
+所以很容易出现，在某种公共场合，需要有人出来维持正义与道德秩序的时候，却没有任何一个人站出来说一句话的沉默的困境。
+比如当今的很多媒体。</p>
+
+<p>公交车上有人偷东西，没人出来抗争。
+老人摔倒了，大家都远远望着不敢近身。
+游人如织的公园，一个小孩掉水里了，没人救。</p>
+
+<p>这种群体沉默的结果将使社会风气恶化，对个体来说，可能倒霉的不是你，但是我们并不知道什么时候就会轮上我们。
+尽管我们可以认为沉默者心灵麻木，感情冷漠，否则他们应该打破沉默，但是我们不得不痛苦的承认，其实所有的沉默者都十分的清醒，他们的沉默对于个人来说，在那种环境下都是最理智，最经济的一种选择。因为每个人都想损失小一些。收益大一些。但由此造成的沉默现象，却给全社会带来了道德上的致命伤害。</p>
+
+<h3 id="逃兵">逃兵</h3>
+
+<p>假如你是一个战场上的士兵。</p>
+
+<ul>
+  <li>如果我方取得战争胜利，大概率是跟你没太大关系的。你倒是冒着可能受伤或者送命的风险。</li>
+  <li>如果敌人取得胜利，你八成能不能留个全尸都不一定。</li>
+</ul>
+
+<p>那么当冲锋号响起的时候，你咋办。</p>
+
+<p>如果大家都往前跑的时候，你稍微往后退后一点，是不是就能稍微增加活下来的几率。</p>
+
+<p>抛出一些什么信仰哈，荣耀啊，尊严啊的事情，你不得不承认。的确是稍微怂一点，可能增加一点点活下来的几率。那么问题来了。所有的士兵要是都这么想。都怂了。那么这仗也不用干了。敌人分分钟干倒你们所有人。</p>
+
+<p>对团体而言，每个人都冲上去和人家拼，是对每个人都有利的。但是就个人而言，怂一点，是对自己有利的。对每一个士兵而言，一个逃兵是最优解。</p>
+
+<p>这是一个典型的囚徒困境的推演。当然现实生活中肯定不会发生这样的事情，因为每个士兵还会有，信仰，荣耀，尊严。甚至是当逃兵后要面对的军事法庭等等。</p>
+
+<h3 id="topic-03-如何走出困境">topic 03 如何走出困境</h3>
+
+<p>那么也就是说，想阻止囚徒困境的发生，就必须提高某种角色要付出的代价或者获得的收益。
+比如，提高反抗小偷后人们获得的收益，无论是精神上的收益还是金钱上的。一定要抬高这个收益。
+或者是提高小偷偷东西被抓住要付出的代价。比如抓住就判死刑。（哈哈 开个玩笑 就是意淫一下）</p>
+
+<p>比如，提高对乐于助人的人的奖励。
+或者，提高那些趁机碰瓷讹人的要付出的代价。无论是精神上还是肉体上还是金钱上。</p>
+
+<p>但是令人伤心的是，我们现在的社会，好像对于这方面并不是做的很好，偷东西的人很多都是跟警察一伙的，有的前脚被抓住，后脚就被放出来了。讹人的人，还是能讹到钱。虽然它们并不占理</p>
+
+
+        </div>
+        <!-- Blog Sidebar Widgets Column -->
+        <div class="col-md-4">
+          <!-- Side Widget Well -->
+          <div class="well">
+            <h4>
+              推荐链接
+            </h4>
+			      <div class="row">
+                        <div class="col-lg-12">
+              <ul class="list-unstyled">
+              <li>
+                <a href="https://promotion.aliyun.com/ntms/act/ambassador/sharetouser.html?userCode=mlv9dicn&productCode=dmspre&utm_source=mlv9dicn" target="_blank" rel="nofollow">
+                  阿里云幸运券购买服务，享实惠多多！
+                </a>
+              </li>
+              <li>
+                <a href="https://www.namesilo.com/register.php?rid=caa2f82dc" target="_blank"  rel="nofollow">
+                  NameSillo买域名就送隐私保护，还不贵!
+                </a>
+              </li>	
+              <li>
+                <a href="https://www.linode.com/?r=6a1d2020e95d84a5d1e6706a659499b1cc0f28bd" target="_blank" rel="nofollow">
+                  Linode高性能VPS，5$/月起，新开通送20$。
+                </a>
+              </li>	
+              <li>
+                <a href="https://bwh1.net/aff.php?aff=16961" target="_blank" rel="nofollow">
+                  带ss的班瓦工VPS，2.99$/月或19.9$/年起。
+                </a>
+              </li>	
+              <li>
+                <a href="http://www.vultr.com/?ref=6879661" target="_blank" rel="nofollow">
+                  VPS新秀Vultr，2.5$/月起，值得一试！
+                </a>
+              </li>			
+            </ul>
+          </div>
+ 
+            </div>
+          </div>
+
+          <!-- Side Widget Well -->
+          <div class="well-ad">
+            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- BlogRightB -->
+<ins class="adsbygoogle"
+	 style="display:inline-block;width:336px;height:280px"
+	 data-ad-client="ca-pub-3557776493079475"
+	 data-ad-slot="4042604803"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script> 
+          </div>
+
+		      <!-- Blog Recent Well -->
+          <div class="well">
+            <h4>
+              最新文章
+            </h4>
+            <div class="row">
+                                  
+              <div class="col-lg-12">
+                <ul class="list-unstyled">
+                     
+                </ul>
+              </div> 
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- /.row -->
+
+      <!-- Footer -->
+      <footer>
+        <div class="row">
+          <div class="col-lg-12">
+            <div style="text-align:center;margin-top:15px;">
+	Copyright &copy; qiushangzhe.github.io, generated by Jekyll, designed by <a href="http://www.panxw.com">panxw</a>. <a href="https://github.com/qiushangzhe/qiushangzhe.github.com">[source]</a>
+</div>
+ 
+          </div>
+          <!-- /.col-lg-12 -->
+        </div>
+        <!-- /.row -->
+      </footer>
+    </div>
+    <!-- /.container -->
+    <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+ 
+  </body>
+
+</html>

@@ -1,0 +1,1187 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="description" content="探索尝试，发现未知可能！记录我学习使用Android/iOS开发、React Native、VPS、Linux、Web建站、Jekyll等技术过程中遇到的问题/解决办法，及一些个人心得总结。 - qiusz's Blog" />
+    <title>Android/iOS/React Native/Web相关 - qiusz's Blog</title>
+    <!-- Bootstrap Core CSS -->
+    <link href="/css/bootstrap.min.css" rel="stylesheet"/>
+    <!-- Custom CSS -->
+    <link href="/css/blog.css" rel="stylesheet"/>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media
+    queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file://
+    -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js">
+      </script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js">
+      </script>
+    <![endif]-->
+        <!-- jQuery Version 1.11.0 -->
+    <script src="/js/jquery-1.11.0.js"> </script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/tongji.js"></script>
+  </head>
+  
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only">
+              Toggle navigation
+            </span>
+            <span class="icon-bar">
+            </span>
+            <span class="icon-bar">
+            </span>
+            <span class="icon-bar">
+            </span>
+          </button>
+          <a class="navbar-brand" href="/">
+            首页
+          </a>
+        </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          		<ul class="nav navbar-nav">
+			
+				<li>
+				  <a href="/idea/index.html">
+					点子
+				  </a>
+				</li>
+			
+				<li>
+				  <a href="/pi/index.html">
+					树莓派
+				  </a>
+				</li>
+			
+				<li>
+				  <a href="/code/index.html">
+					写代码
+				  </a>
+				</li>
+			
+				<li>
+				  <a href="/linux/index.html">
+					杂谈
+				  </a>
+				</li>
+			
+				<li>
+				  <a href="/op/index.html">
+					运维
+				  </a>
+				</li>
+			
+		</ul>  
+        </div>
+        <!-- /.navbar-collapse -->
+      </div>
+      <!-- /.container -->
+    </nav>
+    <!-- Page Content -->
+    <div class="container">
+      <div class="row">
+        <!-- Blog Entries Column -->
+        <div class="col-md-8">
+          <!-- Navi -->
+          <div class="post_frame">
+            <div class="post_navi">
+              <a href="/">首页</a>&nbsp;>&nbsp;
+              <span class="post_navi_span">列表</span>
+            </div>
+            <div style="padding:10px">
+              
+
+<!-- ad -->
+
+<!-- Loop output paged posts -->
+
+<h2>
+  <a href="/idea/weixin.html">
+    微信交易记录导出excel
+  </a> 
+  <div class="post-date">
+	<span class="glyphicon glyphicon-time"></span>
+	2018-05-11
+  </div>
+</h2>
+<hr>
+<h2 id="目的">目的：</h2>
+
+<p>通过抓取微信钱包-&gt;支付中心-&gt;交易记录接口的json response，格式化后输出到excel中。方便直观统计个人支出记录。</p>
+
+
+	<p><h3><a href="/idea/weixin.html">阅读全文 &raquo;</a></h3></p>
+<hr>
+
+<h2>
+  <a href="/install-mysql.html">
+    在linux下安装mysql
+  </a> 
+  <div class="post-date">
+	<span class="glyphicon glyphicon-time"></span>
+	2018-04-27
+  </div>
+</h2>
+<hr>
+<h2 id="安装">安装</h2>
+
+<h4 id="0提前准备删除已安装的mysql">0.提前准备：删除已安装的mysql</h4>
+
+<ul>
+  <li>
+    <p>查看已安装的mysql <code class="highlighter-rouge">rpm -qa |  grep mysql</code></p>
+  </li>
+  <li>
+    <p>删除方法</p>
+
+    <ul>
+      <li>sudo rpm -e –nodeps 包名</li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="1-第一步下载去官网选好自己的版本">1. 第一步下载（去官网选好自己的版本）</h4>
+
+<ul>
+  <li>
+    <p>wget -c https://cdn.mysql.com//Downloads/MySQL-5.7/mysql-community-common-5.7.21-1.el7.x86_64.rpm</p>
+  </li>
+  <li>
+    <p>wget -c https://cdn.mysql.com//Downloads/MySQL-5.7/mysql-community-client-5.7.21-1.el7.x86_64.rpm</p>
+  </li>
+  <li>
+    <p>wget -c https://cdn.mysql.com//Downloads/MySQL-5.7/mysql-community-server-5.7.21-1.el7.x86_64.rpm</p>
+  </li>
+  <li>
+    <p>wget -c https://cdn.mysql.com//Downloads/MySQL-5.7/mysql-community-libs-5.7.21-1.el7.x86_64.rpm</p>
+  </li>
+</ul>
+
+<h4 id="2-第二步安装">2. 第二步安装：</h4>
+<ul>
+  <li>
+    <p>一定按照顺序common –&gt; libs –&gt; clients –&gt; server</p>
+  </li>
+  <li>rpm -ivh mysql-community-common-5.7.21-1.el7.x86_64.rpm</li>
+  <li>rpm -ivh mysql-community-libs-5.7.21-1.el7.x86_64.rpm</li>
+  <li>rpm -ivh mysql-community-client-5.7.21-1.el7.x86_64.rpm</li>
+  <li>rpm -ivh mysql-community-server-5.7.21-1.el7.x86_64.rpm</li>
+</ul>
+
+<h4 id="3-第三步骤开启mysql">3. 第三步骤开启mysql</h4>
+<p>sudo service mysqld start</p>
+
+<h4 id="4-第四步骤-登录">4. 第四步骤 登录</h4>
+
+<ul>
+  <li>
+    <p>密码提前找到：</p>
+  </li>
+  <li>
+    <p>mysql5.7以上的默认密码查看方式
+grep “temporary password” /var/log/mysqld.log</p>
+  </li>
+  <li>
+    <p>mysql -uroot -p登录</p>
+  </li>
+  <li>
+    <p>安装完mysql 之后，登陆以后，不管运行任何命令，总是提示这个</p>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>step 1: SET PASSWORD = PASSWORD('一个随机的密码');
+step 2: ALTER USER 'root'@'localhost' PASSWORD EXPIRE NEVER;
+step 3: flush privileges;
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<p>over</p>
+
+<p>https://www.cnblogs.com/frankielf0921/p/7258137.html
+https://www.cnblogs.com/520playboy/p/6231158.html</p>
+
+<h2 id="其他">其他</h2>
+<ul>
+  <li>给某个数据库添加账号和权限</li>
+</ul>
+
+<ol>
+  <li>grant create,select,insert,update,delete on （数据库名）.<em>（数据表名，</em>为所有表） to 账号@”%” Identified by “密码”;</li>
+  <li>flush privileges;</li>
+</ol>
+
+	<p><h3><a href="/install-mysql.html">阅读全文 &raquo;</a></h3></p>
+<hr>
+
+<h2>
+  <a href="/boyilun.html">
+    博弈论简谈
+  </a> 
+  <div class="post-date">
+	<span class="glyphicon glyphicon-time"></span>
+	2018-04-26
+  </div>
+</h2>
+<hr>
+<h3 id="topic-01-我们生活在困境中">topic 01 我们生活在困境中</h3>
+<p>给大家讲几个我身边的事情：</p>
+
+<ul>
+  <li>
+    <p>我身边会有很多孩子的家长，给孩子报兴趣班，学钢琴，毛笔字，各种巴拉巴拉。这是条件好一点的，条件差一点的，也会报各种的课外辅导班。</p>
+  </li>
+  <li>
+    <p>我就拿一个我自己身边的例子来说，我小的时候，基本周六周日都会去上补课班，而且不是一个人两个人这样，几乎我们一个班级60人，每天放学，每周放假都会有大约40人参加这个补课班。</p>
+  </li>
+  <li>
+    <p>我在高三快考大学的时候，很多商家会来我们学校推销补脑的东西，很多家长也都不太懂是什么东西，就看到别人也买了，自己也跟着买了，虽然最后这个保健药品，跟吃3块钱一包的蛋白粉差不多。</p>
+  </li>
+  <li>
+    <p>运动员服用兴奋剂这个事情其实已经成为业内一个潜规则，几乎百分之90的运动员，在大型比赛中都会或多或少的使用一些兴奋剂来提高比赛成绩，只不过一些国家医学水平比较发达，可以开发出隐蔽性高的药物，或是国家在赛组委会里面有内鬼，里应外合，让服用兴奋剂不会轻易被发现。中国也不例外（百度：李承鹏兴奋剂）</p>
+  </li>
+  <li>
+    <p>还有开车的人特别痛恨的开远光。我想这个事情除非出台重罚法律，否则这个事情会一直存在。</p>
+  </li>
+  <li>
+    <p>财礼，男方家，想少给，女方家想多要。结果多年的感情就在马上结婚之前因为彩礼的事情谈崩了。</p>
+  </li>
+</ul>
+
+<p>我想大家现在应该也会隐约的在我说的这些事情上发现一些共同点。可能每个人对这些身边发生的事情都有自己的见解，我只说一下这里面我要说的点。这些事情基本都可以概括为，跟风。或者说是大家都这么做，我不这么做就吃亏了。或者说个人的利益最大化。人类其实的本能就是在对得与失作出充分计算后行动的动物。</p>
+
+<p>那么我就着这几个小事情再给大家提供另一个思路（以下为极端情况）：</p>
+
+<ul>
+  <li>
+    <p>如果当代社会中的所有家长，都不给孩子报比如钢琴班，那么所有的孩子都不会弹钢琴，那么和所有的孩子都会弹钢琴，实际上是差不多的。因为最后竞争的时候，所有人都不会弹钢琴，和所有人都会弹实际是等价的。况且上钢琴班还要花钱。</p>
+  </li>
+  <li>
+    <p>所有人都不去上课外培训班，大家都只在学校学习，其他时间都好好的度过课余时间。实际上和所有人在学校学习，放学了／放假了去课外辅导班，是一样的。而且如果每个人都不去课外辅导班，那么所有人可能只有60分的学力，那么老师出题可能还会简单，否则每个人都有100分的学力，不仅会让考试题更难，而且还牺牲了课余时间，还费钱。</p>
+  </li>
+  <li>
+    <p>保健品的事情，如果每个人都不买，那么每个人都会获益对吧？先不说吃了以后有没有效果，如果每个人都不买，那么每个人也不会被骗钱。但现实就是，很多人宁可高价跟风去买这个东西，也要试试，毕竟别人也吃了。如果有效果的话，我没有吃岂不是吃亏了。😄</p>
+  </li>
+  <li>
+    <p>兴奋剂！如果所有的运动员或者国家都对兴奋剂说不，那么也免去了开发成本，隐藏成本，还有服用后的副作用。百利无一害的东西。</p>
+  </li>
+  <li>
+    <p>远光灯。所有人都遵守规则，在该开远光的时候开，不该开的时候都不开。即不让别人苦恼，而且自己也省电。（我其实也不知道省不省电哈）</p>
+  </li>
+  <li>
+    <p>彩礼，男方多给点，女方少要点。事情就很开心。（哈哈）</p>
+  </li>
+</ul>
+
+<p>刚刚也说了，人类其实的本能就是在对得与失作出充分计算后行动的动物。明明所有人都不这么做，这个事情获得的收益会更大，但是人们往往却不约而同的让事情往对大家都不好的方向发生。为啥捏？？？？</p>
+
+<p>我拿兴奋剂为例子，列一个表格：</p>
+
+<p>（我们假设吃药不会被轻易查出来）	B运动员选择吃兴奋剂	B运动员选择不吃兴奋剂
+A运动员选择吃兴奋剂	A发挥超常(获得并列冠军)，赛后出现后遗症，可能被抓到吃药的把柄，禁赛。
+B发挥超常(获得并列冠军)，赛后出现后遗症，赛后出现后遗症，可能被抓到吃药的把柄，禁赛。
+A发挥超常(获得冠军)，赛后出现后遗症，可能被抓到吃药的把柄，禁赛。
+B普通发挥
+A运动员选择不吃兴奋剂	A普通发挥
+B发挥超常(获得冠军)，赛后出现后遗症，可能被抓到吃药的把柄，禁赛。
+两人均正常发挥。</p>
+
+<p>那么如果我是A，不论B是否吃兴奋剂，那么我选择吃兴奋剂，都是对我自己最优的选择。</p>
+
+<p>我再举一个比较大的例子。</p>
+
+<p>朝鲜和美国之间的那些事情：
+现在朝鲜在搞核实验，准备怒怼美国。
+美国现在在疯狂的经济制裁朝鲜。</p>
+
+<p>其实两国之间，朝鲜不进行核试验，美国也不制裁朝鲜，大家相安无事是最优解。但是为什么会发生这种事情呢？
+这个问题分析同上一个问题如出一辙，请看表格。</p>
+
+<p>朝鲜研究核武器	朝鲜不研究核武器
+美国经济制裁朝鲜	美国担心朝鲜哪天给我一导弹。
+朝鲜经济受到了影响。人民吃不饱。	压制朝鲜的经济，让他不能动摇美国第一霸权国家的地位。
+美国不制裁朝鲜	朝鲜自己的军事实力得到大幅度的提升	朝鲜还是像得到全球各国的援助。
+美国不用在意朝鲜的核武器。
+哝。不论美朝双方怎么选，另一者都会选择对自己有利的哪一种决策。破这个局，看来只能让中国代替美国成为世界一把手了 哈哈。</p>
+
+<p>这些其实都是一种叫做囚徒困境的博弈论模型的典型实例，其主旨是反映个人最佳选择并非团体最佳选择。</p>
+
+<h3 id="topic-02-困境对我们的影响">topic 02 困境对我们的影响</h3>
+
+<p>再说一个：</p>
+
+<h4 id="沉默的公众">沉默的公众</h4>
+
+<p>小偷在公共场合偷东西，有人看到了却默不作声，没有被偷的人在想，反正没有偷我，我举报了他，我没有任何的收益，还可能被小偷报复。而不举报默不作声，虽然得不到什么，但也不受损。
+小偷也是一样的思路，如果谁反抗举报我，我就揍他，报复他，因为如果个别人举报我反抗，而我不揍他的话，就会有更多的人举报我，反抗我。导致我被抓住，因此小偷必定要打举报他偷东西的人。</p>
+
+<p>有人举报	没人举报
+小偷打举报他的人	举报者被揍，其他人害怕。	-
+小偷不打举报他的人	更多人过来抓小偷。	很完美
+所以很容易出现，在某种公共场合，需要有人出来维持正义与道德秩序的时候，却没有任何一个人站出来说一句话的沉默的困境。
+比如当今的很多媒体。</p>
+
+<p>公交车上有人偷东西，没人出来抗争。
+老人摔倒了，大家都远远望着不敢近身。
+游人如织的公园，一个小孩掉水里了，没人救。</p>
+
+<p>这种群体沉默的结果将使社会风气恶化，对个体来说，可能倒霉的不是你，但是我们并不知道什么时候就会轮上我们。
+尽管我们可以认为沉默者心灵麻木，感情冷漠，否则他们应该打破沉默，但是我们不得不痛苦的承认，其实所有的沉默者都十分的清醒，他们的沉默对于个人来说，在那种环境下都是最理智，最经济的一种选择。因为每个人都想损失小一些。收益大一些。但由此造成的沉默现象，却给全社会带来了道德上的致命伤害。</p>
+
+<h3 id="逃兵">逃兵</h3>
+
+<p>假如你是一个战场上的士兵。</p>
+
+<ul>
+  <li>如果我方取得战争胜利，大概率是跟你没太大关系的。你倒是冒着可能受伤或者送命的风险。</li>
+  <li>如果敌人取得胜利，你八成能不能留个全尸都不一定。</li>
+</ul>
+
+<p>那么当冲锋号响起的时候，你咋办。</p>
+
+<p>如果大家都往前跑的时候，你稍微往后退后一点，是不是就能稍微增加活下来的几率。</p>
+
+<p>抛出一些什么信仰哈，荣耀啊，尊严啊的事情，你不得不承认。的确是稍微怂一点，可能增加一点点活下来的几率。那么问题来了。所有的士兵要是都这么想。都怂了。那么这仗也不用干了。敌人分分钟干倒你们所有人。</p>
+
+<p>对团体而言，每个人都冲上去和人家拼，是对每个人都有利的。但是就个人而言，怂一点，是对自己有利的。对每一个士兵而言，一个逃兵是最优解。</p>
+
+<p>这是一个典型的囚徒困境的推演。当然现实生活中肯定不会发生这样的事情，因为每个士兵还会有，信仰，荣耀，尊严。甚至是当逃兵后要面对的军事法庭等等。</p>
+
+<h3 id="topic-03-如何走出困境">topic 03 如何走出困境</h3>
+
+<p>那么也就是说，想阻止囚徒困境的发生，就必须提高某种角色要付出的代价或者获得的收益。
+比如，提高反抗小偷后人们获得的收益，无论是精神上的收益还是金钱上的。一定要抬高这个收益。
+或者是提高小偷偷东西被抓住要付出的代价。比如抓住就判死刑。（哈哈 开个玩笑 就是意淫一下）</p>
+
+<p>比如，提高对乐于助人的人的奖励。
+或者，提高那些趁机碰瓷讹人的要付出的代价。无论是精神上还是肉体上还是金钱上。</p>
+
+<p>但是令人伤心的是，我们现在的社会，好像对于这方面并不是做的很好，偷东西的人很多都是跟警察一伙的，有的前脚被抓住，后脚就被放出来了。讹人的人，还是能讹到钱。虽然它们并不占理</p>
+
+
+	<p><h3><a href="/boyilun.html">阅读全文 &raquo;</a></h3></p>
+<hr>
+
+<h2>
+  <a href="/js-string.html">
+    js中string常用操作
+  </a> 
+  <div class="post-date">
+	<span class="glyphicon glyphicon-time"></span>
+	2018-04-03
+  </div>
+</h2>
+<hr>
+<h2 id="1字符串转换">1、字符串转换</h2>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">num</span> <span class="o">=</span> <span class="mi">2410</span><span class="p">;</span> <span class="c1">// 2410</span>
+<span class="kd">var</span> <span class="nx">str</span> <span class="o">=</span> <span class="nx">num</span><span class="p">.</span><span class="nx">toString</span><span class="p">();</span> <span class="c1">// "2410"</span>
+<span class="nx">num</span> <span class="o">=</span> <span class="mi">2410</span><span class="p">;</span> <span class="c1">// 2410</span>
+<span class="nx">str</span> <span class="o">=</span> <span class="nb">String</span><span class="p">(</span><span class="nx">num</span><span class="p">);</span> <span class="c1">// "2410"</span>
+<span class="nx">num</span> <span class="o">=</span> <span class="mi">2410</span><span class="p">;</span> <span class="c1">// 2410</span>
+<span class="nx">str</span> <span class="o">=</span> <span class="s2">""</span> <span class="o">+</span> <span class="nx">num</span><span class="p">;</span> <span class="c1">// "2410"</span>
+</code></pre></div></div>
+
+<h2 id="2字符串分割">2、字符串分割</h2>
+<h3 id="split">split</h3>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">str</span> <span class="o">=</span> <span class="s2">"1,2,3,4,5,6,7"</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">substrArray</span> <span class="o">=</span> <span class="nx">str</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s2">","</span><span class="p">);</span><span class="c1">// ["1", "2", "3", "4", "5", "6", "7"];</span>
+<span class="c1">// split()的第二个参数，表示返回的字符串数组的最大长度。</span>
+<span class="kd">var</span> <span class="nx">otherArr</span> <span class="o">=</span> <span class="nx">str</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s2">","</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span><span class="c1">// ["1", "2", "3"];</span>
+</code></pre></div></div>
+
+<h2 id="3获取字符串长度">3、获取字符串长度</h2>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">str</span> <span class="o">=</span> <span class="s2">"123456789"</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">str</span> <span class="o">=</span> <span class="nx">myStr</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="c1">//9</span>
+</code></pre></div></div>
+
+<h2 id="4查询子字符串">4、查询子字符串</h2>
+<h3 id="indexof">indexOf</h3>
+<p>它从字符串的开头开始查找，找到返回对应坐标，找不到返回-1。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">str</span> <span class="o">=</span> <span class="s2">"123456789"</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">index</span> <span class="o">=</span> <span class="nx">str</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="s2">"1"</span><span class="p">);</span> <span class="c1">// 0 ,基于0开始,找不到返回-1</span>
+</code></pre></div></div>
+
+<h3 id="lastindexof">lastIndexOf</h3>
+
+<p>它从字符串的末尾开始查找，找到返回对应坐标，找不到返回-1</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">myStr</span> <span class="o">=</span> <span class="s2">"123456789"</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">index</span> <span class="o">=</span> <span class="nx">myStr</span><span class="p">.</span><span class="nx">lastIndexOf</span><span class="p">(</span><span class="s2">"1"</span><span class="p">);</span> <span class="c1">// 14</span>
+</code></pre></div></div>
+
+<p>以上两个函数同样接收第二个可选的参数，表示开始查找的位置。</p>
+
+<h2 id="5字符串替换">5、字符串替换</h2>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">myStr</span> <span class="o">=</span> <span class="s2">"I,love,you,Do,you,love,me"</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">replacedStr</span> <span class="o">=</span> <span class="nx">myStr</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="s2">"love"</span><span class="p">,</span><span class="s2">"hate"</span><span class="p">);</span>
+<span class="c1">//"I,hate,you,Do,you,love,me"</span>
+</code></pre></div></div>
+
+<p>默认只替换第一次查找到的，想要全局替换，需要置上正则全局标识，如：</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">myStr</span> <span class="o">=</span> <span class="s2">"I,love,you,Do,you,love,me"</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">replacedStr</span> <span class="o">=</span> <span class="nx">myStr</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/love/g</span><span class="p">,</span><span class="s2">"hate"</span><span class="p">);</span>
+<span class="c1">//"I,hate,you,Do,you,hate,me"</span>
+</code></pre></div></div>
+
+<h2 id="6查找给定位置的字符或其字符编码值">6、查找给定位置的字符或其字符编码值</h2>
+
+<p>想要查找给定位置的字符，你可以使用如下函数：</p>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">myStr</span> <span class="o">=</span> <span class="s2">"I,love,you,Do,you,love,me"</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">theChar</span> <span class="o">=</span> <span class="nx">myStr</span><span class="p">.</span><span class="nx">charAt</span><span class="p">(</span><span class="mi">8</span><span class="p">);</span><span class="c1">// "o",同样从0开始</span>
+</code></pre></div></div>
+
+<p>同样，它的一个兄弟函数就是查找对应位置的字符编码值，如：</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">myStr</span> <span class="o">=</span> <span class="s2">"I,love,you,Do,you,love,me"</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">theChar</span> <span class="o">=</span> <span class="nx">myStr</span><span class="p">.</span><span class="nx">charCodeAt</span><span class="p">(</span><span class="mi">8</span><span class="p">);</span> <span class="c1">//111</span>
+</code></pre></div></div>
+<h2 id="7字符串连接">7、字符串连接</h2>
+
+<p>字符串连接操作可以简单到用一个加法运算符搞定，如：</p>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">str1</span> <span class="o">=</span> <span class="s2">"I,love,you!"</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">str2</span> <span class="o">=</span> <span class="s2">"Do,you,love,me?"</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">str</span> <span class="o">=</span> <span class="nx">str1</span> <span class="o">+</span> <span class="nx">str2</span> <span class="o">+</span> <span class="s2">"Yes!"</span><span class="p">;</span>
+<span class="c1">//"I,love,you!Do,you,love,me?Yes!"</span>
+</code></pre></div></div>
+<p>同样，JavaScript也自带了相关的函数，如：</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">str1</span> <span class="o">=</span> <span class="s2">"I,love,you!"</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">str2</span> <span class="o">=</span> <span class="s2">"Do,you,love,me?"</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">str</span> <span class="o">=</span> <span class="nx">str1</span><span class="p">.</span><span class="nx">concat</span><span class="p">(</span><span class="nx">str2</span><span class="p">);</span>
+<span class="c1">//"I,love,you!Do,you,love,me?"</span>
+</code></pre></div></div>
+<p>其中concat()函数可以有多个参数，传递多个字符串，拼接多个字符串。</p>
+
+<h2 id="8字符串切割和提取">8、字符串切割和提取</h2>
+
+<p>有三种可以从字符串中抽取和切割的方法，如：</p>
+
+<h3 id="第一种使用slice">第一种，使用slice():</h3>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">myStr</span> <span class="o">=</span> <span class="s2">"I,love,you,Do,you,love,me"</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">subStr</span> <span class="o">=</span> <span class="nx">myStr</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">);</span><span class="c1">//",lov"</span>
+</code></pre></div></div>
+<h3 id="第二种使用substring">第二种，使用substring():</h3>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">myStr</span> <span class="o">=</span> <span class="s2">"I,love,you,Do,you,love,me"</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">subStr</span> <span class="o">=</span> <span class="nx">myStr</span><span class="p">.</span><span class="nx">substring</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">);</span> <span class="c1">//",lov"</span>
+</code></pre></div></div>
+<h3 id="第三种使用substr">第三种，使用substr():</h3>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">myStr</span> <span class="o">=</span> <span class="s2">"I,love,you,Do,you,love,me"</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">subStr</span> <span class="o">=</span> <span class="nx">myStr</span><span class="p">.</span><span class="nx">substr</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">);</span> <span class="c1">//",love"</span>
+</code></pre></div></div>
+<p>与第一种和第二种不同的是，substr()第二个参数代表截取的字符串最大长度，如上结果所示。</p>
+
+<h3 id="9字符串大小写转换">9、字符串大小写转换</h3>
+
+<p>常用的转换为大写或者小写字符串函数，如下：</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">myStr</span> <span class="o">=</span> <span class="s2">"I,love,you,Do,you,love,me"</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">lowCaseStr</span> <span class="o">=</span> <span class="nx">myStr</span><span class="p">.</span><span class="nx">toLowerCase</span><span class="p">();</span>
+<span class="c1">//"i,love,you,do,you,love,me";</span>
+<span class="kd">var</span> <span class="nx">upCaseStr</span> <span class="o">=</span> <span class="nx">myStr</span><span class="p">.</span><span class="nx">toUpperCase</span><span class="p">();</span>
+<span class="c1">//"I,LOVE,YOU,DO,YOU,LOVE,ME"</span>
+</code></pre></div></div>
+
+<h3 id="10字符串匹配">10、字符串匹配</h3>
+
+<p>字符串匹配可能需要你对正则表达式有一定的了解，先来看看match()函数：</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">myStr</span> <span class="o">=</span> <span class="s2">"I,love,you,Do,you,love,me"</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">pattern</span> <span class="o">=</span> <span class="sr">/love/</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">result</span> <span class="o">=</span> <span class="nx">myStr</span><span class="p">.</span><span class="nx">match</span><span class="p">(</span><span class="nx">pattern</span><span class="p">);</span><span class="c1">//["love"]</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span> <span class="p">.</span><span class="nx">index</span><span class="p">);</span><span class="c1">//2</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">.</span><span class="nx">input</span> <span class="p">);</span><span class="c1">//I,love,you,Do,you,love,me</span>
+</code></pre></div></div>
+
+<p>如你所见，match()函数在字符串上调用，并且接受一个正则的参数。来看看第二个例子，使用exec()函数：</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">myStr</span> <span class="o">=</span> <span class="s2">"I,love,you,Do,you,love,me"</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">pattern</span> <span class="o">=</span> <span class="sr">/love/</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">result</span> <span class="o">=</span> <span class="nx">pattern</span> <span class="p">.</span><span class="nx">exec</span><span class="p">(</span><span class="nx">myStr</span><span class="p">);</span><span class="c1">//["love"]</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span> <span class="p">.</span><span class="nx">index</span><span class="p">);</span><span class="c1">//2</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">.</span><span class="nx">input</span> <span class="p">);</span><span class="c1">//I,love,you,Do,you,love,me</span>
+</code></pre></div></div>
+<p>简单吧，仅仅是把正则和字符串换了个位置，即exec()函数是在正则上调用，传递字符串的参数。对于上面两个方法，匹配的结果都是返回第一个匹配成功的字符串，如果匹配失败则返回null.</p>
+
+<p>再来看一个类似的方法search(),如：</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">myStr</span> <span class="o">=</span> <span class="s2">"I,love,you,Do,you,love,me"</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">pattern</span> <span class="o">=</span> <span class="sr">/love/</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">result</span> <span class="o">=</span> <span class="nx">myStr</span><span class="p">.</span><span class="nx">search</span><span class="p">(</span><span class="nx">pattern</span><span class="p">);</span><span class="c1">//2</span>
+</code></pre></div></div>
+<p>仅返回查到的匹配的下标，如果匹配失败则返回-1.</p>
+
+<h3 id="11字符串比较">11、字符串比较</h3>
+
+<p>比较两个字符串，比较是规则是按照字母表顺序比较的，如：</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">myStr</span> <span class="o">=</span> <span class="s2">"chicken"</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">myStrTwo</span> <span class="o">=</span> <span class="s2">"egg"</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">first</span> <span class="o">=</span> <span class="nx">myStr</span><span class="p">.</span><span class="nx">localeCompare</span><span class="p">(</span><span class="nx">myStrTwo</span><span class="p">);</span> <span class="c1">// -1</span>
+<span class="nx">first</span> <span class="o">=</span> <span class="nx">myStr</span><span class="p">.</span><span class="nx">localeCompare</span><span class="p">(</span><span class="s2">"chicken"</span><span class="p">);</span> <span class="c1">// 0</span>
+<span class="nx">first</span> <span class="o">=</span> <span class="nx">myStr</span><span class="p">.</span><span class="nx">localeCompare</span><span class="p">(</span><span class="s2">"apple"</span><span class="p">);</span> <span class="c1">// 1</span>
+</code></pre></div></div>
+
+	<p><h3><a href="/js-string.html">阅读全文 &raquo;</a></h3></p>
+<hr>
+
+<h2>
+  <a href="/smart.html">
+    人力资源了解一下
+  </a> 
+  <div class="post-date">
+	<span class="glyphicon glyphicon-time"></span>
+	2018-04-01
+  </div>
+</h2>
+<hr>
+<h2 id="冰山模型">冰山模型</h2>
+<p>冰山模型指的是恒定一个人对于某一项工作是否可以胜任。不仅仅是需要考量工作技能和专业知识等表面的，还要考量一些关于这个人内在的一些特性
+比如：</p>
+
+<ol>
+  <li>
+    <p>一个人基于态度和价值观的行为方式与风格。</p>
+  </li>
+  <li>
+    <p>一个人的价值观，态度，以及自我印象。</p>
+
+    <ul>
+      <li>
+        <p>是不是自信的人。</p>
+      </li>
+      <li>
+        <p>是不是具有合作精神。</p>
+      </li>
+      <li>
+        <p>是不是具有献身精神。</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>性格，品质，这些可以预测这个人在长期无人监督下的工作状态。</p>
+
+    <ul>
+      <li>比如 正直的人 诚实的人 有责任心的人</li>
+    </ul>
+  </li>
+  <li>
+    <p>潜在的需求，偏好，驱动引导个人行动</p>
+
+    <ul>
+      <li>成就需求，热爱挑战。</li>
+      <li>人际交往需求，擅长交流</li>
+    </ul>
+  </li>
+</ol>
+
+<h2 id="smart原则">SMART原则</h2>
+<p>制定目标的原则。</p>
+
+<p>要具体的，可以量化，是符合实际切实可实现的，是和自身要完成的事情有一定的关联的，有时限性。</p>
+
+<p>比如 我要让人帮我做一件事。</p>
+
+<ul>
+  <li>bad:我说，老婆，我渴了。    （这就是很傻逼的一种，我知道你要喝水还是喝茶。）</li>
+  <li>good:但是我说，老婆，你帮我去楼下超市买一瓶冰镇的矿泉水。在5分钟内帮我买回来。（这个就是目的性很强的指令）</li>
+</ul>
+
+<p>比如我要制定一个计划。</p>
+<ul>
+  <li>bad:我要学会理财。（？？？）</li>
+  <li>good:我这个月要记账，每天晚上把当天的财务支出都统计在本本上。月底回顾一下。哪些是必要消费，哪些是不必要消费。（这个就比较具体的）</li>
+</ul>
+
+<p>比如我要介绍我的工作履历</p>
+<ul>
+  <li>bad：我负责xxx业务。（喵喵喵？）</li>
+  <li>good：我在今年的3月到10月，完成20个xxx业务需求的迭代上线。线上bug率0。（这样就很舒适）</li>
+</ul>
+
+	<p><h3><a href="/smart.html">阅读全文 &raquo;</a></h3></p>
+<hr>
+
+<h2>
+  <a href="/pi-action.html">
+    树莓派中常用操作
+  </a> 
+  <div class="post-date">
+	<span class="glyphicon glyphicon-time"></span>
+	2018-03-16
+  </div>
+</h2>
+<hr>
+<h2 id="下载资源网">下载资源网</h2>
+<p>http://shumeipai.nxez.com/download</p>
+
+<h2 id="安装ftp服务">安装ftp服务</h2>
+<ul>
+  <li>sudo apt-get install vsftpd</li>
+  <li>sudo nano /etc/vsftpd.conf 配置文件修改</li>
+  <li>启动服务 sudo service vsftpd start／。。。</li>
+</ul>
+
+<h2 id="安装nginx">安装nginx </h2>
+<ul>
+  <li>sudo apt-get install nginx</li>
+</ul>
+
+<h2 id="创建软连接">创建软连接</h2>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo ln</span> <span class="nt">-s</span> /home/pi/node-v9.3.0-linux-armv7l/bin/node /usr/sbin/
+<span class="nb">sudo ln</span> <span class="nt">-s</span> /home/pi/node-v9.3.0-linux-armv7l/bin/npm /usr/sbin/
+</code></pre></div></div>
+
+<h2 id="禁止休眠">禁止休眠</h2>
+<ul>
+  <li>http://www.mz6.net/news/android/6942.html 
+用文件管理器打开/etc/profile.d文件夹，新建个screen.sh文件，使用Text Editor打开该文件，输入下列两行命令，然后保存。
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>xset dpms 0 0 0
+xset s off
+</code></pre></div>    </div>
+  </li>
+  <li>然后 <code class="highlighter-rouge">chmod 777 screen.sh</code></li>
+</ul>
+
+<h2 id="安装mysql">安装mysql</h2>
+
+<p>http://blog.csdn.net/faryang/article/details/50788795</p>
+
+<h2 id="natapp-开机运行">natapp 开机运行</h2>
+
+<p>Natapp For 树莓派 开机启动脚本</p>
+
+<h2 id="运行natapp客户端">运行natapp客户端</h2>
+
+<ul>
+  <li>在 https://natapp.cn 官网 下载客户端. 放在目录 /usr/natapp/ 运行</li>
+</ul>
+
+<p><code class="highlighter-rouge">sudo chmod a+x /usr/natapp/natapp</code></p>
+
+<p>给予可执行权限</p>
+
+<ul>
+  <li>下载config.ini放置在同级目录,config 配置说明请见 https://natapp.cn/article/config_ini</li>
+</ul>
+
+<p>将authtoken等配置 写入 config.ini中.</p>
+
+<p>需要注意的是 务必关闭 关闭Web管理界面 (登录网站-&gt;我的隧道-&gt;配置)</p>
+
+<ul>
+  <li>测试运行情况</li>
+</ul>
+
+<p><code class="highlighter-rouge">./usr/natapp/natapp</code></p>
+
+<p>实际测试穿透应用,确保无误,后关闭客户端</p>
+
+<h4 id="自启动脚本">自启动脚本</h4>
+
+<ul>
+  <li>将启动脚本 (下载) 放在 <code class="highlighter-rouge">/etc/init.d/</code> 下</li>
+</ul>
+
+<p>给予 755权限</p>
+
+<p><code class="highlighter-rouge">sudo chmod 755 /etc/init.d/natapp</code></p>
+
+<ul>
+  <li>测试 init.d 启动 运行</li>
+</ul>
+
+<p><code class="highlighter-rouge">sudo /etc/init.d/natapp start</code></p>
+
+<p>确保穿透应用运行无误.</p>
+
+<ul>
+  <li>加入开机自启动</li>
+</ul>
+
+<p><code class="highlighter-rouge">cd /etc/init.d</code>
+<code class="highlighter-rouge">sudo update-rc.d natapp defaults 90</code></p>
+
+<p>此步骤需保证无任何错误输出</p>
+
+<p><code class="highlighter-rouge">sudo reboot</code>
+正常的话,已经可以自动了</p>
+
+<h4 id="相关命令">相关命令</h4>
+
+<p><code class="highlighter-rouge">sudo /etc/init.d/natapp start</code>    #开启
+<code class="highlighter-rouge">sudo /etc/init.d/natapp stop</code>    #关闭
+<code class="highlighter-rouge">sudo /etc/init.d/natapp restart</code>  #重启</p>
+
+<p><code class="highlighter-rouge">cd /etc/init.d</code>
+<code class="highlighter-rouge">sudo update-rc.d natapp defaults 90</code>    #加入开机启动
+<code class="highlighter-rouge">sudo update-rc.d -f natapp remove</code>  #取消开机启动</p>
+
+<h2 id="开启端口远程访问">开启端口远程访问</h2>
+<p>这里的iptable命令和centos中命令不一样，所以参考了一下文档，使用 ufw软件来开启3306端口
+4.1安装ufw</p>
+
+<p><code class="highlighter-rouge">apt-get installufw</code></p>
+
+<p>4.2启用ufw</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ufw enable
+ufw default deny
+</code></pre></div></div>
+
+<p>4.3开启3306、22（ssh端口）端口</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ufw allow 3306 
+ufw allow 22 
+</code></pre></div></div>
+
+<p>注意：如果不开启22端口，下次启动树莓派时，系统的22端口会禁用，不能使用ssh登录树莓派</p>
+
+<h2 id="换源">换源</h2>
+
+<h3 id="换源之前一定要看好当前系统的版本是什么我之前的问题很多原因是因为当前系统版本是stretch我却给写成了其他的"> 换源之前一定要看好当前系统的版本是什么。！！我之前的问题很多原因是因为当前系统版本是stretch我却给写成了其他的。</h3>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>http://shumeipai.nxez.com/2013/08/31/raspbian-chinese-software-source.html
+sudo nano /etc/apt/sources.list
+deb http://mirrors.aliyun.com/raspbian/raspbian/ stretch main contrib non-free
+deb-src http://mirrors.aliyun.com/raspbian/raspbian/ stretch main contrib non-free
+</code></pre></div></div>
+
+	<p><h3><a href="/pi-action.html">阅读全文 &raquo;</a></h3></p>
+<hr>
+
+<h2>
+  <a href="/pi-nginx-proxy.html">
+    利用nginx实现反向代理
+  </a> 
+  <div class="post-date">
+	<span class="glyphicon glyphicon-time"></span>
+	2018-01-02
+  </div>
+</h2>
+<hr>
+<h2 id="这是啥">这是啥？</h2>
+
+<p>在使用树莓派充当个人服务器的过程中，由于网络运营商的问题，无法给我的树莓派分配公网ip，所以需要在第三方服务提供商购买内网穿透服务。本人选用的是 <a href="https://natapp.cn/">natapp</a> 。最便宜的低至5元/月。但是在使用穿透服务的时候，有一个问题，那就是每一个隧道只能对应一个端口，那么也就是说，我在树莓派上部署多个服务的时候，就要购买多个natapp的隧道。这个就很不愉快了。所以，我决定使用nginx来进行反向代理。</p>
+
+<h3 id="整体的结构图应该是这样没仔细画">整体的结构图应该是这样(没仔细画):</h3>
+
+<p><img src="http://localhost:4000/source/images/pi-nginx-proxy/nginx01.png" alt="截图" /></p>
+
+<ul>
+  <li>第一步：购买natapp隧道部分我就不细表了，官网都有文档教程。</li>
+  <li>第二步：在树莓派上安装nginx，并配置反向代理。
+    <ul>
+      <li>安装nginx我也不细说了。</li>
+      <li>主要写一下怎么配置反向代理。</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="nginx反向代理配置多用于一个外网端口多个内网服务端口">nginx反向代理配置（多用于一个外网端口，多个内网服务端口）</h3>
+<p>首先我在本地用koa开启了两个http服务。
+端口分别是3000和3001
+返回的是当前访问的url和服务的端口号</p>
+
+<p><img src="http://localhost:4000/source/images/pi-nginx-proxy/nginx02.png" alt="截图" />
+<img src="http://localhost:4000/source/images/pi-nginx-proxy/nginx03.png" alt="截图" /></p>
+
+<h3 id="然后nginx的配置文件">然后nginx的配置文件</h3>
+<div class="language-nginx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">server</span> <span class="p">{</span>
+  <span class="kn">listen</span> <span class="mi">80</span><span class="p">;</span>
+  <span class="kn">location</span> <span class="n">/service1/</span> <span class="p">{</span>
+    <span class="kn">proxy_pass</span> <span class="s">http://127.0.0.1:3000/</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="kn">location</span> <span class="n">/service2/</span> <span class="p">{</span>
+    <span class="kn">proxy_pass</span> <span class="s">http://127.0.0.1:3001/</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<h3 id="最后重启nginx">最后重启nginx</h3>
+
+<p><img src="http://localhost:4000/source/images/pi-nginx-proxy/nginx05.png" alt="截图" />
+<img src="http://localhost:4000/source/images/pi-nginx-proxy/nginx06.png" alt="截图" /></p>
+
+<h3 id="nginx配置一个外网端口多个静态网站">nginx配置（一个外网端口，多个静态网站）</h3>
+
+<ul>
+  <li>为了方便测试，我在本地创建了两个文件夹，作为两个网站的根目录。</li>
+</ul>
+
+<p><img src="http://localhost:4000/source/images/pi-nginx-proxy/nginx04.png" alt="截图" /></p>
+
+<ul>
+  <li>开始配置nginx：</li>
+</ul>
+
+<div class="language-nginx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">server</span> <span class="p">{</span>
+  <span class="kn">listen</span> <span class="mi">80</span><span class="p">;</span>
+  <span class="kn">location</span> <span class="s">^~</span> <span class="n">/service1/</span> <span class="p">{</span>
+    <span class="kn">alias</span> <span class="n">/Users/qiusz/qiushangzhe/mycode/testcode/web01/</span><span class="p">;</span>
+    <span class="kn">index</span> <span class="s">index.html</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="kn">location</span> <span class="s">^~</span> <span class="n">/service2/</span> <span class="p">{</span>
+    <span class="kn">alias</span> <span class="n">/Users/qiusz/qiushangzhe/mycode/testcode/web02/</span><span class="p">;</span>
+    <span class="kn">index</span> <span class="s">index.html</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+</code></pre></div></div>
+
+<h2 id="额外的">额外的</h2>
+
+<p>这里着重说一下location中的alias，当这个地方写root 的时候，当你访问<code class="highlighter-rouge">127.0.0.1/service1/index.html</code>的时候，nginx访问你本地的路径是<code class="highlighter-rouge">/Users/qiusz/qiushangzhe/mycode/testcode/web01/service1/index.html</code> 而使用alias的时候，同样前提下，nginx访问你本地的文件路径则是<code class="highlighter-rouge">/Users/qiusz/qiushangzhe/mycode/testcode/web01/index.html</code> 注意这个区别。具体需求用不同的方案配置。</p>
+
+<ul>
+  <li>关于root和alias的区别，参考 http://blog.csdn.net/u011510825/article/details/50531864</li>
+</ul>
+
+	<p><h3><a href="/pi-nginx-proxy.html">阅读全文 &raquo;</a></h3></p>
+<hr>
+
+<h2>
+  <a href="/run-npm.html">
+    如何令你的npm包全局可执行
+  </a> 
+  <div class="post-date">
+	<span class="glyphicon glyphicon-time"></span>
+	2017-08-04
+  </div>
+</h2>
+<hr>
+<h2 id="写在前面的">写在前面的</h2>
+
+<p>npm包的编写发布已经会了，但是如何另它像gulp一样可以直接在命令行全局执行呢？</p>
+
+<p>linux环境的可执行命令都会放在/bin 目录下。</p>
+
+<p>mac环境的可执行命令有一些是放在/usr/local/bin 目录下的</p>
+
+<p>所以想让我们的包可以命令行执行，就得让我们的入口可执行脚本文件出现在在bin目录下，幸运的是，这个操作npm帮我们做了。如果想让npm帮我们实现这个功能，需要做如下配置</p>
+
+<ul>
+  <li>在入口脚本文件第一行添加  #!/usr/bin/env node  来告诉shell，这个脚本是要通过node来执行。</li>
+  <li>在 package.json 文件中添加字段 bin</li>
+</ul>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s2">"bin"</span><span class="p">:{</span><span class="w">
+    </span><span class="s2">"执行的命令"</span><span class="p">:</span><span class="s2">"添加了#!/usr/bin/env node的入口文件"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+<p>比如</p>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s2">"bin"</span><span class="p">:{</span><span class="w">
+    </span><span class="s2">"xxx"</span><span class="p">:</span><span class="s2">"main.js"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+<ul>
+  <li>配置好以后，可以通过npm link进行调试。
+    <ul>
+      <li>在写好的包的路径控制台输入 npm link</li>
+      <li>在一个新的路径 控制台输入 npm link xxx</li>
+      <li>在当前路径 控制台输入 xxx</li>
+      <li>main.js被执行了</li>
+    </ul>
+  </li>
+</ul>
+
+<p>如果其他人想使用你的包，安装方式为 npm install 你的包地址 -g ，前提是你发布的仓库是github。
+安装完成后执行xxx即可</p>
+
+	<p><h3><a href="/run-npm.html">阅读全文 &raquo;</a></h3></p>
+<hr>
+
+<h2>
+  <a href="/who-to-wirte-npm.html">
+    如何编写并发布一个npm包
+  </a> 
+  <div class="post-date">
+	<span class="glyphicon glyphicon-time"></span>
+	2017-08-03
+  </div>
+</h2>
+<hr>
+<h2 id="干啥的">干啥的</h2>
+
+<p>做js开发的 人应该对 npm install xxxx 这个指令并不陌生。当做一个需求的时候，有些功能有人已经写好了，你只需要执行这个命令去安装它的包就可以了。非常方便。那么如何来写一个我们自己的npm包呢？</p>
+
+<h2 id="简单说一些">简单说一些</h2>
+
+<p>我们想要的一个工具包类似如下的使用过程</p>
+
+<ol>
+  <li>npm install xxxx –save</li>
+  <li>代码中引入</li>
+</ol>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">xxx</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'xxx'</span><span class="p">);</span>
+<span class="nx">xxx</span><span class="p">.</span><span class="nx">someFunc</span><span class="p">();</span>
+</code></pre></div></div>
+
+<h2 id="编写">编写</h2>
+
+<ul>
+  <li>
+    <p>模块内部写的东西不细说了。</p>
+  </li>
+  <li>
+    <p>整个模块需要一个入口 比如index.js。</p>
+  </li>
+  <li>
+    <p>入口配置在 package.json 的 main 字段</p>
+    <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s2">"main"</span><span class="p">:</span><span class="s2">"index.js"</span><span class="w">
+</span></code></pre></div>    </div>
+  </li>
+</ul>
+
+<h2 id="发布到github">发布到github</h2>
+<p>在 package.json 的 repository 字段配置仓库信息，这里是git作为仓库</p>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s2">"repository"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"git"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"填写你的git仓库地址"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+<p>然后你本地安装的时候只需要 npm install 你的git仓库地址  就可以了</p>
+
+<h2 id="发布到npm官方库">发布到npm官方库</h2>
+
+<blockquote>
+  <p>不详细介绍了，尽量不往官方仓库提交低质量包。自己使用建议还是放在git上</p>
+</blockquote>
+
+<ul>
+  <li>注册npm账号</li>
+  <li>本地登录</li>
+  <li>npm publish</li>
+</ul>
+
+	<p><h3><a href="/who-to-wirte-npm.html">阅读全文 &raquo;</a></h3></p>
+<hr>
+
+<h2>
+  <a href="/web/neteasy-gentie-stop.html">
+    忧伤，网易云跟贴8月1日将停止服务!
+  </a> 
+  <div class="post-date">
+	<span class="glyphicon glyphicon-time"></span>
+	2017-07-06
+  </div>
+</h2>
+<hr>
+<p>晚上浏览博客时，发现网友新的留言，于是点开浏览器收藏下的网易云跟贴（https://gentie.163.com/）准备进后台看看，不料刚进云跟贴首页，就弹出一个大大的8.1日停服通告</p>
+
+
+	<p><h3><a href="/web/neteasy-gentie-stop.html">阅读全文 &raquo;</a></h3></p>
+<hr>
+
+
+<!-- Pager indicator -->
+<div style="margin:0px auto;text-align: center">
+
+</div>
+            </div>
+          </div>
+        </div>
+        <!-- Blog Sidebar Widgets Column -->
+        <div class="col-md-4">
+          <!-- Side Widget Well -->
+          <div class="well">
+            <h4>
+              推荐链接
+            </h4>
+			      <div class="row">
+                        <div class="col-lg-12">
+              <ul class="list-unstyled">
+              <li>
+                <a href="https://promotion.aliyun.com/ntms/act/ambassador/sharetouser.html?userCode=mlv9dicn&productCode=dmspre&utm_source=mlv9dicn" target="_blank" rel="nofollow">
+                  阿里云幸运券购买服务，享实惠多多！
+                </a>
+              </li>
+              <li>
+                <a href="https://www.namesilo.com/register.php?rid=caa2f82dc" target="_blank"  rel="nofollow">
+                  NameSillo买域名就送隐私保护，还不贵!
+                </a>
+              </li>	
+              <li>
+                <a href="https://www.linode.com/?r=6a1d2020e95d84a5d1e6706a659499b1cc0f28bd" target="_blank" rel="nofollow">
+                  Linode高性能VPS，5$/月起，新开通送20$。
+                </a>
+              </li>	
+              <li>
+                <a href="https://bwh1.net/aff.php?aff=16961" target="_blank" rel="nofollow">
+                  带ss的班瓦工VPS，2.99$/月或19.9$/年起。
+                </a>
+              </li>	
+              <li>
+                <a href="http://www.vultr.com/?ref=6879661" target="_blank" rel="nofollow">
+                  VPS新秀Vultr，2.5$/月起，值得一试！
+                </a>
+              </li>			
+            </ul>
+          </div>
+ 
+            </div>
+          </div>
+
+          <!-- Side Widget Well -->
+          <div class="well-ad">
+            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- BlogRightB -->
+<ins class="adsbygoogle"
+	 style="display:inline-block;width:336px;height:280px"
+	 data-ad-client="ca-pub-3557776493079475"
+	 data-ad-slot="4042604803"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script> 
+          </div>
+          
+          <!-- Blog Recent Well -->
+          <div class="well">
+            <h4>
+              最新文章
+            </h4>
+            <div class="row">
+                                  
+              <div class="col-lg-12">
+                <ul class="list-unstyled">
+                    
+                              <li>
+                                <a href="/idea/weixin.html">
+                                  微信交易记录导出excel
+                                </a>
+                              </li>
+                    
+                              <li>
+                                <a href="/install-mysql.html">
+                                  在linux下安装mysql
+                                </a>
+                              </li>
+                    
+                              <li>
+                                <a href="/boyilun.html">
+                                  博弈论简谈
+                                </a>
+                              </li>
+                    
+                              <li>
+                                <a href="/js-string.html">
+                                  js中string常用操作
+                                </a>
+                              </li>
+                    
+                              <li>
+                                <a href="/smart.html">
+                                  人力资源了解一下
+                                </a>
+                              </li>
+                    
+                              <li>
+                                <a href="/pi-action.html">
+                                  树莓派中常用操作
+                                </a>
+                              </li>
+                    
+                              <li>
+                                <a href="/pi-nginx-proxy.html">
+                                  利用nginx实现反向代理
+                                </a>
+                              </li>
+                    
+                              <li>
+                                <a href="/run-npm.html">
+                                  如何令你的npm包全局可执行
+                                </a>
+                              </li>
+                    
+                              <li>
+                                <a href="/who-to-wirte-npm.html">
+                                  如何编写并发布一个npm包
+                                </a>
+                              </li>
+                    
+                              <li>
+                                <a href="/web/neteasy-gentie-stop.html">
+                                  忧伤，网易云跟贴8月1日将停止服务!
+                                </a>
+                              </li>
+                     
+                </ul>
+              </div> 
+            </div>
+          </div>		  
+
+		     <!-- Blog Links Well -->
+          <div class="well">
+            <h4>
+              友情链接
+			  <div class="linkme">
+				<a href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=w7SqraWqsa6DsrLtoKyu" target="_blank">
+					<span class="linkme_span">交换链接</span>
+				</a>
+			  </div>
+            </h4>
+                        <ul class="list-unstyled">
+              <li>
+                <a href="https://github.com" rel="nofollow">
+                  GitHub
+                </a>
+              </li>
+              <li>
+                <a href="http://www.manongjc.com" target="_blank" rel="nofollow">
+                  码农教程
+                </a>
+              </li>	
+              <li>
+                <a href="http://www.youth168.com" target="_blank" rel="nofollow">
+                  青年励志网
+                </a>
+              </li>
+              <li>
+                <a href="http://xujinkai.info/" target="_blank" rel="nofollow"> 
+                  JK的博客
+                </a>
+              </li>				  
+            </ul>
+ 
+          </div>
+        </div>
+      </div>
+      <!-- /.row -->
+
+      <!-- Footer -->
+      <footer>
+        <div class="row">
+          <div class="col-lg-12">
+            <div style="text-align:center;margin-top:15px;">
+	Copyright &copy; qiushangzhe.github.io, generated by Jekyll, designed by <a href="http://www.panxw.com">panxw</a>. <a href="https://github.com/qiushangzhe/qiushangzhe.github.com">[source]</a>
+</div>
+ 
+          </div>
+          <!-- /.col-lg-12 -->
+        </div>
+        <!-- /.row -->
+      </footer>
+    </div>
+    <!-- /.container -->
+    <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+ 
+  </body>
+</html>

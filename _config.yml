@@ -1,0 +1,39 @@
+markdown: kramdown
+highlighter: rouge
+permalink: /:categories/:title.html 
+excerpt_separator: "<!-- more -->"
+
+github: qiushangzhe
+author: "qiushangzhe"
+email: 470542573@qq.com
+name: "qiusz's Blog"
+baseurl: /
+url: https://qiushangzhe.github.io
+domain: qiushangzhe.github.io
+
+all_categories: [
+  ["idea", "点子","/idea/index.html"], 
+  ["pi", "树莓派", "/pi/index.html"],
+  ["code", "写代码","/code/index.html"], 
+  ["talk", "杂谈","/linux/index.html"],
+  ["op", "运维","/op/index.html"]
+]
+
+paginate: 10 
+paginate_path: "index_:num"
+
+index_layout: "index.html"
+category_layout: "_layouts/category.html"
+tag_layout: "_layouts/tag.html"
+
+#不使用gems库中的jekyll-paginate-category
+#使用基于jekyll-paginate改写的的栏目分页插件，所以jekyll-paginate还需要用上。
+#gems: [jekyll-paginate,jekyll-paginate-category]
+gems: [jekyll-paginate]
+
+collections:
+  docs:
+    output: true
+
+copyright: []
+#timezone: Asia/Shanghai
