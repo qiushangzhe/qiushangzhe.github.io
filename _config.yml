@@ -124,7 +124,7 @@ gitalk:
 leancloud:
   app_id: ChYi5T87pgNqjzoJmODQ832k-gzGzoHsz # LeanCloud App id
   app_key: haUc6ng2M0NUQxXPMneILh6i # LeanCloud App key
-  app_class: _User # LeanCloud App class
+  app_class: # LeanCloud App class
 
 
 ## => Analytics
