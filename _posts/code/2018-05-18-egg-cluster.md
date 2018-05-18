@@ -118,7 +118,7 @@ const Application = require(options.framework).Application;
 2. agent 不知道是干啥的。之后看看egg的其他模块，看看这个`options.framework`到底传了一个什么进来。
 3. app 这个应该就是业务进程，所有的http请求处理啦，数据库读写逻辑，都是在这个进程中。也就是用户开发的代码都在这个进程里面跑
 
-所以，egg在特点是单进程，单线程，只支持单核CPU，不能充分的利用多核CPU服务器的node框架上，利用一些node提供的模块，加上自己的一些封装，编写出了egg-cluster，扩展出了一套多进程，可以充分的利用多核CPU服务器的web-service `egg.js`
+所以，egg在特点是单进程，单线程，只支持单核CPU，不能充分的利用多核CPU服务器的node框架上，利用一些node提供的模块，加上自己的一些封装，编写出了egg-cluster，扩展出了一套多进程，可以充分的利用多核CPU服务器的web-service `egg.js`,并且免去了老的通过pm2或者forever的方式去管理web-service。
 
 如果想学习node的多进程调度，多进程实现。那么阅读egg-cluster源码不失为一个很好的方式。
 
